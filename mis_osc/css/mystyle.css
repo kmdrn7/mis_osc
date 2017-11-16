@@ -1,0 +1,153 @@
+@font-face {
+	font-family: "Akrobat-Regular";
+	src: url("../fonts/akrobat/Akrobat-Regular.otf");
+}
+
+body {
+	background-image: url("../resources/background3.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Akrobat-Regular";
+	font-size: 14px;
+	line-height: 20px;
+    font-weight: 400;
+}
+
+nav{
+    margin-bottom: 0px;
+}
+
+.navbar {
+   background:rgba(0,0,0,0.5);
+   margin-bottom: 0px;
+}
+
+.login-text {
+    position: absolute;
+    color: white;
+    font-family: "Akrobat-Regular";
+    font-size: 22px;
+}
+
+.navbar-text-center {
+    position: absolute;
+    width: 95%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    color: white;
+    font-family: "Akrobat-Regular";
+    font-size: 22px;
+}
+
+a.navbar:hover, a.navbar:active {
+	background-color: rgba(0,0,0,0.5);
+}
+
+.dropdown-toggle {
+	color: white;
+	font-family: "Akrobat-Regular";
+	font-size: 22px;
+}
+
+.dropdown-toggle:active, .dropdown-toggle:visited, .dropdown-toggle:link {
+    color: white;
+    font-family: "Akrobat-Regular";
+    font-size: 22px;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+
+.judul {
+	font-family: "Akrobat-Regular";
+}
+
+input {
+	padding: 5px;
+	padding-right: 15px;
+	font-size: 14px;
+}
+
+.optionrow {
+	margin-right: 10px;
+	margin-left: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.topspace {
+	margin-top: 20px;
+}
+
+.topspace2 {
+    margin-top: 5px;
+}
+
+.tengah {
+	align-self: center;
+}
+
+.myboxsize {
+	width: 70%;
+}
+
+.table {
+    margin: 0 0 40px 0;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: table;
+}
+
+.rowtable:nth-of-type(2n+1) {
+    background: #e9e9e9;
+}
+
+.rowtable {
+    display: table-row;
+    background: #f6f6f6;
+}
+
+.rowtable.header {
+    font-weight: 900;
+    color: #ffffff;
+    background: #ea6153;
+}
+
+.rowtable.blue {
+    background: #2980b9;
+}
+
+.cell {
+    padding: 6px 12px;
+    display: table-cell;
+}
