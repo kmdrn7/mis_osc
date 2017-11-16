@@ -16,6 +16,7 @@
 				    <div class='cell' style='border-color: black; border: 1px; border-right-style: solid;'>10</div>
 				    <div class='cell' style='border-color: black; border: 1px; border-right-style: solid;'>11</div>
 				    <div class='cell' style='border-color: black; border: 1px; border-right-style: solid;'>12</div>
+				    <div class='cell' style='border-color: black; border: 1px; border-right-style: solid;'>Kehadiran</div>
 				    <div class='cell' style='border-color: black; border: 1px; border-right-style: solid;'>Option</div>
 				</div>
 				<?php
@@ -27,6 +28,8 @@
 					if (mysqli_num_rows($result) > 0) {
 						while ($row = mysqli_fetch_assoc($result)) {
 							$j=1;
+							$hadir=0;
+							$pembagi=0;
 							echo "<div class='rowtable'>";
 							echo "<div class='cell' style='border: 1px; border-right-style: solid; border-left-style: solid; border-bottom-style: solid;'>" . $i . "</div>";
 							$resultNama = mysqli_query($conn, "SELECT * FROM data_mahasiswa WHERE nrp=" . $row["nrp"]);
@@ -37,6 +40,7 @@
 							while($j < 13) {
 								if($row["minggu_ke" . $j] == 1) {
 									echo "<div class='cell' style='border: 1px; border-right-style: solid; border-bottom-style: solid;' align='center'>H</div>";
+									$hadir++;
 								} else if($row["minggu_ke" . $j] == 0){
 									echo "<div class='cell' style='border: 1px; border-right-style: solid; border-bottom-style: solid;' align='center'>-</div>";
 								} else if($row["minggu_ke" . $j] == 2){
@@ -44,8 +48,12 @@
 								} else if($row["minggu_ke" . $j] == 3){
 									echo "<div class='cell' style='border: 1px; border-right-style: solid; border-bottom-style: solid;' align='center'>A</div>";
 								}
+								if(!$row["minggu_ke" . $j] == 0) {
+									$pembagi++;
+								}
 								$j++;
 							}
+							echo "<div class='cell' style='border: 1px; border-right-style: solid; border-bottom-style: solid;' align='center'>" . floor(($hadir / $pembagi) * 100) . "% </div>";
 							echo "<div class='cell' style='border: 1px; border-right-style: solid; border-bottom-style: solid;'><a href='details.php?nrp=$row[nrp]'></span><span class='glyphicon glyphicon-info-sign optionrow'></a>";
 							if ($userId !== '') {
 								if($userLvl == "admin") {
