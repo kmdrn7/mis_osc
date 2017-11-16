@@ -1,4 +1,8 @@
 <?php
+		session_start();
+		if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {  
+    		header("Location: login.php");
+    	}
 		include 'koneksi.php';
 		// $result = mysqli_query($conn, "SELECT * FROM data_mahasiswa where nrp=" . $nrp);
 		$sqlMinggu = "SELECT * FROM `data_tambahan` WHERE `tanggal` = '" . date("Y-m-d") . "'";

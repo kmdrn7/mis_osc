@@ -1,5 +1,8 @@
-<?php 
-	session_start();
+<?php
+	session_start(); 
+	if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {  
+    	header("Location: login.php");
+    }
 	$minggu=0;
 	$errorcode=0;
     if(isset($_GET['nrp'])) {
